@@ -54,5 +54,38 @@ to set up test emails.
 
 Do the same thing for config/environments/production.rb, but with working data:
 
-    config.action_mailer.delivery_options = :smtp
+    config.action_mailer.delivery_method = :smtp
     config.action_mailer.default_url_options = { :host => 'photobom.herokuapp.com', :protocol => 'https' }
+    
+    
+    
+
+**Now when a user signs up in development an email isnt actually sent- but if you look 
+in the server window you will see
+
+    Sent mail to brandon.brigance@gmail.com (11.4ms)
+    Date: Sat, 03 Dec 2016 05:44:23 +0000
+    From: please-change-me-at-config-initializers-devise@example.com
+    Reply-To: please-change-me-at-config-initializers-devise@example.com
+    To: brandon.brigance@gmail.com
+    Message-ID: <58425bb71c6ec_1f783fddf884516488630@b-random-sb-photobom-4014139.mail>
+    Subject: Confirmation instructions
+    Mime-Version: 1.0
+    Content-Type: text/html;
+     charset=UTF-8
+    Content-Transfer-Encoding: 7bit
+    
+    <p>Welcome brandon.brigance@gmail.com!</p>
+    
+    <p>You can confirm your account email through the link below:</p>
+    
+    <p><a href="https://photobom-b-random-sb.c9users.io/users/confirmation?confirmation_token=vodHxPtzYBePxyHgN15e&amp;locale=en">Confirm my account</a></p>
+    
+    Redirected to https://photobom-b-random-sb.c9users.io/
+    Completed 302 Found in 483ms (ActiveRecord: 8.9ms)
+    
+if we paste just the URL in the localhost address bar
+
+    "https://photobom-b-random-sb.c9users.io/users/confirmation?confirmation_token=vodHxPtzYBePxyHgN15e&amp;locale=en
+
+You will see a success message.
