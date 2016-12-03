@@ -8,6 +8,11 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  
+  #ActionMailer test
+  config.action_mailer.delivery_method = :test
+  #changing :test to :smtp to send emails from development- NOT RECOMMENDED
+  config.action_mailer.default_url_options = { :host => 'https://photobom-b-random-sb.c9users.io' }
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true

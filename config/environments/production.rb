@@ -9,6 +9,10 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+  
+  #ActionMailer config
+  config.action_mailer.delivery_options = :smtp
+  config.action_mailer.default_url_options = { :host => 'photobom.herokuapp.com', :protocol => 'https' }
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
